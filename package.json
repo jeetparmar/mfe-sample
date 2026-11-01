@@ -1,0 +1,23 @@
+{
+  "name": "mfe-sample",
+  "private": true,
+  "workspaces": ["packages/*", "apps/*"],
+  "scripts": {
+    "dev": "concurrently -n host,catalog,cart -c blue,magenta,green \"npm start -w @mfe/host\" \"npm start -w @mfe/catalog\" \"npm start -w @mfe/cart\"",
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "concurrently": "^9.0.1",
+    "css-loader": "^7.1.2",
+    "esbuild-loader": "^4.2.2",
+    "html-webpack-plugin": "^5.6.3",
+    "style-loader": "^4.0.0",
+    "typescript": "^5.6.3",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  }
+}

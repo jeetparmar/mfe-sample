@@ -1,0 +1,25 @@
+:root {
+  --ink: #101820;
+  --muted: #55616e;
+  --line: #d5dbe2;
+  --paper: #eef1f4;
+  --font: "Avenir Next", "Segoe UI", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); font-family: var(--font); color: var(--ink); }
+
+.shell { max-width: 1040px; margin: 0 auto; padding: 24px 20px 48px; }
+.shell__header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 24px; }
+.shell__brand { margin: 0; font-size: 1.75rem; letter-spacing: -0.02em; }
+.shell__badge { padding: 4px 10px; background: var(--ink); color: #fff; border-radius: 999px; font-size: 0.9rem; }
+.shell__main { display: grid; grid-template-columns: 3fr 2fr; gap: 24px; align-items: start; }
+
+.frame { position: relative; padding: 28px 20px 20px; background: #fff; border: 2px solid var(--owner); border-radius: 6px; }
+.frame__tag {
+  position: absolute; top: -12px; left: 12px; padding: 2px 8px;
+  background: var(--owner); color: #fff; border-radius: 3px; font-size: 0.8rem;
+}
+.frame__loading, .frame__error { margin: 0; color: var(--muted); }
+.frame__error { color: #a3261b; }
+
+@media (max-width: 760px) { .shell__main { grid-template-columns: 1fr; } }
